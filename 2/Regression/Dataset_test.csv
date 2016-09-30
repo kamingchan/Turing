@@ -1,0 +1,501 @@
+DocumentID,Words (split by space),anger,disgust,fear,joy,sad,surprise
+test1,terror officials see al qaeda chiefs regaining power,0,0,0,0,0,0
+test2,ivrea journal in italian town a civics lesson from pelting neighbors,0,0,0,0,0,0
+test3,iraqi sunni lands show new oil and gas promise,0,0,0,0,0,0
+test4,princess and heir of franz ferdinand fights to repeal a law and gain a castle,0,0,0,0,0,0
+test5,a film star in kampala conjuring aminos ghost,0,0,0,0,0,0
+test6,militants attack u s base in iraq,0,0,0,0,0,0
+test7,north africa feared as staging ground for terror,0,0,0,0,0,0
+test8,iran says sunnis using pakistan as base planned fatal bombing,0,0,0,0,0,0
+test9,anglicans rebuke u s branch on same sex unions,0,0,0,0,0,0
+test10,homemade bombs kill on indian train,0,0,0,0,0,0
+test11,al qaeda chiefs are seen to regain power,0,0,0,0,0,0
+test12,chvez threatens to jail violators of price controls,0,0,0,0,0,0
+test13,bush declares iran s arms role in iraq is certain,0,0,0,0,0,0
+test14,accord on north korea is announced,0,0,0,0,0,0
+test15,u s says powerful iraqi cleric is living in iran,0,0,0,0,0,0
+test16,baghdad plan is a success iraq prime minister tells bush,0,0,0,0,0,0
+test17,iraqi sunni lands show new oil and gas promise,0,0,0,0,0,0
+test18,dispute over iraqi cleric said to have gone to iran,0,0,0,0,0,0
+test19,planning seen in iraqi attacks on u s copters,0,0,0,0,0,0
+test20,in the world of life saving drugs a growing epidemic of deadly fakes,0,0,0,0,0,0
+test21,basics a mammal in winter with a furnace of her own,0,0,0,0,0,0
+test22,books on science the problems in modeling nature with its unruly natural tendencies,0,0,0,0,0,0
+test23,believing scripture but playing by science s rules,0,0,0,0,0,0
+test24,a familiar and prescient voice brought to life,0,0,0,0,0,0
+test25,findings a cool million for a climate backup plan,0,0,0,0,0,0
+test26,call it serendipity a missing piece of washington s war tent is found,0,0,0,0,0,0
+test27,free will now you have it now you don t,0,0,0,0,0,0
+test28,archaeologists find signs of early chimps tool use,0,0,0,0,0,0
+test29,wizardry at harvard physicists move light,0,0,0,0,0,0
+test30,the summit a slap in the face of the palestinians,0,0,0,0,0,0
+test31,moscow says palestine israeli contacts key to mideast peace,0,0,0,0,0,0
+test32,mideast summit edns with little progress,0,0,0,0,0,0
+test33,india decries an act of sabotage,0,0,0,0,0,0
+test34,pakistan india peace talks planned despite bombings,0,0,0,0,0,0
+test35,czechs poles get missile warning,0,0,0,0,0,0
+test36,russia warns us against missile bases in east europe,0,0,0,0,0,0
+test37,cheney starts visit to japan australia,0,0,0,0,0,0
+test38,china cheney shores up the trilateral alliance,0,0,0,0,0,0
+test39,iraq insurgents attack us base,0,0,0,0,0,0
+test40,us soldiers die in day of violence,0,0,0,0,0,0
+test41,iraqi suicide attack kills two us troops as militants fight purge,0,0,0,0,0,0
+test42,iran reneges on nuclear payments to russia,0,0,0,0,0,0
+test43,top colombia official resigns,0,0,0,0,0,0
+test44,colombia fm resigns after relatives arrests for militia links,0,0,0,0,0,0
+test45,foreign minister of colombia quits in scandal,0,0,0,0,0,0
+test46,new zealand unlikely to allow crippled japanese whaler,0,0,0,0,0,0
+test47,damaged japanese whaling ship may resume hunting off antarctica,0,0,0,0,0,0
+test48,japanese whaling ship won t accept help,0,0,0,0,0,0
+test49,iran top n envoy heads for vienna for nuke talks,0,0,0,0,0,0
+test50,victims of air india still wait for justice,0,0,0,0,0,0
+test51,kanishka bombing case inquiry judge threatens to quit,0,0,0,0,0,0
+test52,judge threatens to shut down air india inquiry,0,0,0,0,0,0
+test53,royal rescues presidential hopes with commanding performance,0,0,0,0,0,0
+test54,royal seeks to revive french bid,0,0,0,0,0,0
+test55,sarkozy comfort zone offers a royal opportunity,0,0,0,0,0,0
+test56,hicks first in line for trial bush says,0,0,0,0,0,0
+test57,australia tells bush to speed up guantanamo trial,0,0,0,0,0,0
+test58,howard presses bush on terror suspect,0,0,0,0,0,0
+test59,france ends toxic alert at canadian embassy in paris,0,0,0,0,0,0
+test60,paris police investigate package at canadian embassy,0,0,0,0,0,0
+test61,false alarm at canadian embassy in paris,0,0,0,0,0,0
+test62,afghan forces retake town that was overrun by taliban,0,0,0,0,0,0
+test63,taliban seize rural district in southwest as police flee,0,0,0,0,0,0
+test64,afghan poppy war alienates farmers,0,0,0,0,0,0
+test65,will north korea honor pledge this time,0,0,0,0,0,0
+test66,kim jong il bans japanese cars in north korea,0,0,0,0,0,0
+test67,iran vs north korea not all enemies are equal,0,0,0,0,0,0
+test68,catholic archbishop outlines anglican merger hopes,0,0,0,0,0,0
+test69,anglican and catholic churches could merge,0,0,0,0,0,0
+test70,us helicopter crash kills troops in afghanistan,0,0,0,0,0,0
+test71,eight us soldiers killed in zabul helicopter crash,0,0,0,0,0,0
+test72,arroyo lauds passage of anti terror bill,0,0,0,0,0,0
+test73,house passes anti terrorism measure manila,0,0,0,0,0,0
+test74,livingstone s transport empire may extend,0,0,0,0,0,0
+test75,london is pace setter on congestion toll says mayor,0,0,0,0,0,0
+test76,protest greets congestion charge s westward push,0,0,0,0,0,0
+test77,thailand attacks kill three injure,0,0,0,0,0,0
+test78,thai govt moves to smooth over relations with south,0,0,0,0,0,0
+test79,bombings say muslim rebels won t negotiate,0,0,0,0,0,0
+test80,roots of autism more complex than thought,0,0,0,0,0,0
+test81,largest ever autism study identifies two genetic culprits,0,0,0,0,0,0
+test82,canadian breakthrough offers hope on autism,0,0,0,0,0,0
+test83,beware of peanut butter pathogens,0,0,0,0,0,0
+test84,experts offer advice on salmonella,0,0,0,0,0,0
+test85,experts issue new heart disease guidelines for women,0,0,0,0,0,0
+test86,for women aspirin a day could keep stroke away,0,0,0,0,0,0
+test87,high cholesterol raises stroke risk healthy women,0,0,0,0,0,0
+test88,cooked chicken breasts join tainted food recalls,0,0,0,0,0,0
+test89,ready to eat chicken breasts recalled due to suspected listeria,0,0,0,0,0,0
+test90,fully cooked chicken strips recalled,0,0,0,0,0,0
+test91,committee debates cancer vaccine plan,0,0,0,0,0,0
+test92,stop cancer with a shot,0,0,0,0,0,0
+test93,mln birds to be vaccinated from bird flu near moscow,0,0,0,0,0,0
+test94,thousands tested after russian h n outbreak,0,0,0,0,0,0
+test95,russian bird flu outbreak is deadly asian strain,0,0,0,0,0,0
+test96,bernard matthews to lay off up to workers,0,0,0,0,0,0
+test97,matthews lays off turkey workers,0,0,0,0,0,0
+test98,reopening bird flu hitfactory ignores risks poultryman,0,0,0,0,0,0
+test99,goodbye to girlhood,0,0,0,0,0,0
+test100,media cited for showing girls as sex objects,0,0,0,0,0,0
+test101,sexualisation harms young girls,0,0,0,0,0,0
+test102,a shot in the arm,0,0,0,0,0,0
+test103,thousands line up to get late flu shots,0,0,0,0,0,0
+test104,king county offering some free flu vaccines,0,0,0,0,0,0
+test105,bush vows cooperation on health care,0,0,0,0,0,0
+test106,health returns as hot issue in race,0,0,0,0,0,0
+test107,small business owners find bush health plan appealing,0,0,0,0,0,0
+test108,pediatricians say more cord blood is needed now,0,0,0,0,0,0
+test109,whether to save cord blood can be puzzle for parents,0,0,0,0,0,0
+test110,retinal implant helping blind people see again,0,0,0,0,0,0
+test111,indonesia will not share flu samples,0,0,0,0,0,0
+test112,health canada issues advice on canned tuna,0,0,0,0,0,0
+test113,cholesterol link in diabetes study,0,0,0,0,0,0
+test114,pig cells hope for diabetes cure,0,0,0,0,0,0
+test115,sick hearts switch on a fetal gene,0,0,0,0,0,0
+test116,foetal mechanism helps heart failure,0,0,0,0,0,0
+test117,planned cesareans not risk free group warns,0,0,0,0,0,0
+test118,scientists tout cocoa s health benefits,0,0,0,0,0,0
+test119,feeding your brain new benefits found in chocolate,0,0,0,0,0,0
+test120,some cocoa may improve brain blood flow,0,0,0,0,0,0
+test121,lawyer for deceased nazi era collaborator papon vows to bury him,0,0,0,0,0,0
+test122,cocoa could be antidote to age related diseases says new study,0,0,0,0,0,0
+test123,china denies reports of north korean apology,0,0,0,0,0,0
+test124,hungarian opposition calls for vote after violence escalates,0,0,0,0,0,0
+test125,au regrets sudan s expulsion of un envoy,0,0,0,0,0,0
+test126,bush officials no big move in iraq plan,0,0,0,0,0,0
+test127,opponent is put on the spot over remarks about clinton,0,0,0,0,0,0
+test128,house ethics panel talks to hastert aide,0,0,0,0,0,0
+test129,bellsouth says profit rises on cingular earnings,0,0,0,0,0,0
+test130,enron boss gets year sentence,0,0,0,0,0,0
+test131,sony apologizes for battery recall,0,0,0,0,0,0
+test132,google unveils do it yourself search engine,0,0,0,0,0,0
+test133,firefox hits the web,0,0,0,0,0,0
+test134,oracle world opens with dell unveiling amd powered computers,0,0,0,0,0,0
+test135,seahawks qb hasselbeck out weeks,0,0,0,0,0,0
+test136,marathon winner released from hospital,0,0,0,0,0,0
+test137,punter charged with stabbing asks to live outside state,0,0,0,0,0,0
+test138,allmendinger joining toyota team in nascar,0,0,0,0,0,0
+test139,trying to assess the damage in cleveland,0,0,0,0,0,0
+test140,bryant s boot may have salvaged bucs season,0,0,0,0,0,0
+test141,this week in auto racing october october,0,0,0,0,0,0
+test142,merriman violation stuns ex teammate,0,0,0,0,0,0
+test143,bruce revells in upset,0,0,0,0,0,0
+test144,steelers roethlisberger has concussion,0,0,0,0,0,0
+test145,arthurs upsets robredo in first round at the st petersburg open,0,0,0,0,0,0
+test146,mbeki world cup planning on track,0,0,0,0,0,0
+test147,clinical everton show moyes means business,0,0,0,0,0,0
+test148,ms adds office to vista coupon program,0,0,0,0,0,0
+test149,one search does not fit all,0,0,0,0,0,0
+test150,apple s dark secret the claim,0,0,0,0,0,0
+test151,bad weather cancels men s downhill,0,0,0,0,0,0
+test152,cool millions for youtube founders,0,0,0,0,0,0
+test153,london market a shopping dining haven,0,0,0,0,0,0
+test154,jackass star marries childhood friend the secrets people reveal,0,0,0,0,0,0
+test155,audio slide show a love story lasting years,0,0,0,0,0,0
+test156,microsoft to release next generation phone,0,0,0,0,0,0
+test157,body shop s roddick has hepatitis c,0,0,0,0,0,0
+test158,teen allegedly armed by mom turns self in,0,0,0,0,0,0
+test159,oxfam action needed for chad,0,0,0,0,0,0
+test160,violence continues at disputed holy site,0,0,0,0,0,0
+test161,storm leaves behind major travel troubles,0,0,0,0,0,0
+test162,u s troops killed hunting weapons cache,0,0,0,0,0,0
+test163,china s friends highlights web freedoms,0,0,0,0,0,0
+test164,nato afghanistan peace by,0,0,0,0,0,0
+test165,alaska s northern lights captivate japanese,0,0,0,0,0,0
+test166,smith can t be buried until hearing,0,0,0,0,0,0
+test167,spacewalker sets new u s record,0,0,0,0,0,0
+test168,fortune india the superpower think again,0,0,0,0,0,0
+test169,kerry blasts escalation of misguided war,0,0,0,0,0,0
+test170,anna nicole claimant a prince of a guy,0,0,0,0,0,0
+test171,ronnie and eto o hug and make up,0,0,0,0,0,0
+test172,best of the chicago auto show,0,0,0,0,0,0
+test173,grey s betty scrubs get boost,0,0,0,0,0,0
+test174,massive mud traps dozens of families,0,0,0,0,0,0
+test175,edwards blogger quits becomes journalistic martyr,0,0,0,0,0,0
+test176,town packs gym to mourn killed in fire,0,0,0,0,0,0
+test177,spain ahead although nadal is out,0,0,0,0,0,0
+test178,ecb holds rates at percent,0,0,0,0,0,0
+test179,iran rejects us claims of supplying weapons in iraq,0,0,0,0,0,0
+test180,jakarta begins disinfection,0,0,0,0,0,0
+test181,rowling heartbroken euphoric at potter s end,0,0,0,0,0,0
+test182,apple revs up mac attacks on vista,0,0,0,0,0,0
+test183,fear hinders black marrow donation,0,0,0,0,0,0
+test184,texan allegedly joined somalia rebel plot,0,0,0,0,0,0
+test185,u s to allow iraqi refugees,0,0,0,0,0,0
+test186,japan whaling activists terrorists,0,0,0,0,0,0
+test187,hannibal bites the big one,0,0,0,0,0,0
+test188,women protest pakistan demolition,0,0,0,0,0,0
+test189,wii news for gamers,0,0,0,0,0,0
+test190,democrats look beyond symbolic vote on iraq,0,0,0,0,0,0
+test191,portugal to vote on abortion laws,0,0,0,0,0,0
+test192,frustration rises as north korea nuclear talks stall,0,0,0,0,0,0
+test193,horse teeth give details of ancient big chill,0,0,0,0,0,0
+test194,scam lures victims with free puppy offer,0,0,0,0,0,0
+test195,two koreas to resume talks,0,0,0,0,0,0
+test196,mickelson driving force at masters,0,0,0,0,0,0
+test197,england opt for bopara over loye,0,0,0,0,0,0
+test198,create own thrillville for a wild ride,0,0,0,0,0,0
+test199,edwards campaign blogger quits amid catholic controversy,0,0,0,0,0,0
+test200,judge preserve anna nicole s body,0,0,0,0,0,0
+test201,dolphins sea lions may report for duty soon,0,0,0,0,0,0
+test202,nasdaq lse battle nears deadline,0,0,0,0,0,0
+test203,a personal plea for hpv vaccine plan,0,0,0,0,0,0
+test204,u s opens door for iraqi refugees,0,0,0,0,0,0
+test205,swiss plane crashes at moscow airport,0,0,0,0,0,0
+test206,study napping might help heart,0,0,0,0,0,0
+test207,myspace sales surging,0,0,0,0,0,0
+test208,telecoms giant slashes jobs,0,0,0,0,0,0
+test209,air france klm profit rises,0,0,0,0,0,0
+test210,uganda parliament votes to send troops to somalia,0,0,0,0,0,0
+test211,king and queen reign at british film awards,0,0,0,0,0,0
+test212,murphys rule box office with norbit,0,0,0,0,0,0
+test213,thousands rally in lebanon,0,0,0,0,0,0
+test214,yahoo s mission quest,0,0,0,0,0,0
+test215,area should get inches of snow today,0,0,0,0,0,0
+test216,miss brazil wins lawsuit competition,0,0,0,0,0,0
+test217,snow wreaks havoc in east midwest,0,0,0,0,0,0
+test218,the secrets people reveal,0,0,0,0,0,0
+test219,research supports medicinal marijuana,0,0,0,0,0,0
+test220,all african amputee football games kick off,0,0,0,0,0,0
+test221,group video shows chopper go down,0,0,0,0,0,0
+test222,sale of chrysler possible,0,0,0,0,0,0
+test223,russia condemns terrorist acts on buses outside beirut,0,0,0,0,0,0
+test224,technology may save india s river dolphins,0,0,0,0,0,0
+test225,airbus a superjumbo takes off,0,0,0,0,0,0
+test226,naps are great for chaps,0,0,0,0,0,0
+test227,female astronaut sets record,0,0,0,0,0,0
+test228,corn stoves popping up in u s homes,0,0,0,0,0,0
+test229,iraq closes borders with syria and iran,0,0,0,0,0,0
+test230,the troubling ending of the departed,0,0,0,0,0,0
+test231,vietnamese bank plans ipo listing,0,0,0,0,0,0
+test232,toyota s scion parks in second life,0,0,0,0,0,0
+test233,obama will run in,0,0,0,0,0,0
+test234,cagney lacey finally coming to dvd,0,0,0,0,0,0
+test235,merkel stop iran,0,0,0,0,0,0
+test236,salt lake city mall shooter was teenager,0,0,0,0,0,0
+test237,female astronaut sets record,0,0,0,0,0,0
+test238,oil holds at,0,0,0,0,0,0
+test239,obama announces presidential bid,0,0,0,0,0,0
+test240,tell your boss naps are good for you,0,0,0,0,0,0
+test241,serbia rejects united nation s kosovo plan,0,0,0,0,0,0
+test242,amish discuss shootings,0,0,0,0,0,0
+test243,jail me i ate ivory coast chocolate,0,0,0,0,0,0
+test244,can north korea be trusted,0,0,0,0,0,0
+test245,tourism lags in bush s hometown,0,0,0,0,0,0
+test246,astronaut s arrest tests nasa s mettle,0,0,0,0,0,0
+test247,man gets second chance at space ride,0,0,0,0,0,0
+test248,go ahead take a nap science says,0,0,0,0,0,0
+test249,weekly nielsen will lost find its way back,0,0,0,0,0,0
+test250,brith airways baggage charges cause confusion,0,0,0,0,0,0
+test251,indonesian with bird flu dies,0,0,0,0,0,0
+test252,st louis poised for entertainment upswing,0,0,0,0,0,0
+test253,new york city may ban ipods while crossing street,0,0,0,0,0,0
+test254,boy allegedly told to kill by mom gives up,0,0,0,0,0,0
+test255,gray wolves off endangered list,0,0,0,0,0,0
+test256,vista s hyped security will be tested,0,0,0,0,0,0
+test257,uk police slammed over terror raid,0,0,0,0,0,0
+test258,mogadishu residents flee blasts,0,0,0,0,0,0
+test259,bomb kills on military bus in iran,0,0,0,0,0,0
+test260,warioware wii make perfect fit,0,0,0,0,0,0
+test261,u s at odds with cleric s aide,0,0,0,0,0,0
+test262,desperate iraqi mother relies on militia for help,0,0,0,0,0,0
+test263,full details of the eu report on iran,0,0,0,0,0,0
+test264,singer on cowell glad he was mean,0,0,0,0,0,0
+test265,jones faces europe meetings snub,0,0,0,0,0,0
+test266,beckham goal helps real snatch win,0,0,0,0,0,0
+test267,guinea plan offices close as country declares emergency,0,0,0,0,0,0
+test268,japan s economy grows,0,0,0,0,0,0
+test269,united nations peacekeepers raid haitian slum,0,0,0,0,0,0
+test270,work starts on arctic seed vault,0,0,0,0,0,0
+test271,social networking goes mobile,0,0,0,0,0,0
+test272,beauticians cut curl offer stroke prevention info,0,0,0,0,0,0
+test273,siesta cuts risk of heart disease death study finds,0,0,0,0,0,0
+test274,thomas cook to merge with mytravel,0,0,0,0,0,0
+test275,nap your way to a successful career,0,0,0,0,0,0
+test276,village buried by inches of snow,0,0,0,0,0,0
+test277,oprah announces new book club pick,0,0,0,0,0,0
+test278,the science of love and lust,0,0,0,0,0,0
+test279,northeaster cancels flights shuts schools,0,0,0,0,0,0
+test280,napping may be good for your heart,0,0,0,0,0,0
+test281,ryan o neal injured son s girlfriend,0,0,0,0,0,0
+test282,chrysler s valentine s day massacre,0,0,0,0,0,0
+test283,madrid bombings trial begins,0,0,0,0,0,0
+test284,fight starts over hpv vaccine,0,0,0,0,0,0
+test285,autos drive european gains,0,0,0,0,0,0
+test286,james brown s partner can get her things,0,0,0,0,0,0
+test287,auto show canceled,0,0,0,0,0,0
+test288,uk luxury maker burberry made in china,0,0,0,0,0,0
+test289,on the job naps might cut heart risk,0,0,0,0,0,0
+test290,no florida survives rupp arena streak hits,0,0,0,0,0,0
+test291,j k rowling marks spot of potter s end,0,0,0,0,0,0
+test292,gronholm takes a commanding lead,0,0,0,0,0,0
+test293,howard slams obama on iraq policy,0,0,0,0,0,0
+test294,manila hints at ransom approval,0,0,0,0,0,0
+test295,champion murray too good for kim,0,0,0,0,0,0
+test296,g yen skates by yuan singled out,0,0,0,0,0,0
+test297,gunman was srebrenica survivor,0,0,0,0,0,0
+test298,cutting through the clutter to get things done,0,0,0,0,0,0
+test299,mother lohan is doing great in rehab,0,0,0,0,0,0
+test300,who s going to win at the grammys,0,0,0,0,0,0
+test301,libby defense upsets judge rests,0,0,0,0,0,0
+test302,breakup rings find new homes,0,0,0,0,0,0
+test303,gronholm ahead as solberg crashes,0,0,0,0,0,0
+test304,norbit a waste of murphy,0,0,0,0,0,0
+test305,rocky start for bangkok airport,0,0,0,0,0,0
+test306,dead in lebanese minibus bombings,0,0,0,0,0,0
+test307,sex torture claims hit russia army,0,0,0,0,0,0
+test308,mega marsupials once roamed australia,0,0,0,0,0,0
+test309,rupert murdoch s secret tivo,0,0,0,0,0,0
+test310,update plane crashes at moscow airport no passengers,0,0,0,0,0,0
+test311,hpv vaccination stirs heated debate in america,0,0,0,0,0,0
+test312,court tv accused killer tells jury a love story,0,0,0,0,0,0
+test313,whistle blowing web site exposed,0,0,0,0,0,0
+test314,start late retire rich,0,0,0,0,0,0
+test315,somali pm vows to bring islamists to justice,0,0,0,0,0,0
+test316,swingers more common than most think,0,0,0,0,0,0
+test317,anna nicole smith fans mourn in cyberspace,0,0,0,0,0,0
+test318,antibiotic ketek more dangerous than thought,0,0,0,0,0,0
+test319,time to book your cruise,0,0,0,0,0,0
+test320,blazing angels for ps fails to soar,0,0,0,0,0,0
+test321,north korea aid demand stall talks,0,0,0,0,0,0
+test322,cartoon network head steps down,0,0,0,0,0,0
+test323,malaysia aggressively wooing tourists,0,0,0,0,0,0
+test324,anna nicole smith s bahamas home seized,0,0,0,0,0,0
+test325,andromeda involved in galactic collision,0,0,0,0,0,0
+test326,rwanda mulling kid limit for families,0,0,0,0,0,0
+test327,wilkinson sets record in tame win,0,0,0,0,0,0
+test328,army engineers say dam safe,0,0,0,0,0,0
+test329,france al qaeda suspects arrested,0,0,0,0,0,0
+test330,utah gunman survived srebrenica,0,0,0,0,0,0
+test331,creating a whole album in a month,0,0,0,0,0,0
+test332,india to test new nuclear missile,0,0,0,0,0,0
+test333,g to china ease exchange rate grip,0,0,0,0,0,0
+test334,hatton hands back ibf title again,0,0,0,0,0,0
+test335,bernanke economy healthy but,0,0,0,0,0,0
+test336,mickelson sutherland share lead,0,0,0,0,0,0
+test337,napping is good for your heart study finds,0,0,0,0,0,0
+test338,princess masako author no regrets,0,0,0,0,0,0
+test339,students use im lingo in essays,0,0,0,0,0,0
+test340,malaysia launches tourism campaign,0,0,0,0,0,0
+test341,study africa s internet gap getting wider,0,0,0,0,0,0
+test342,travel chaos as heavy snow hits uk,0,0,0,0,0,0
+test343,paula abdul i have never been drunk,0,0,0,0,0,0
+test344,salmonella outbreak traced to peanut butter,0,0,0,0,0,0
+test345,putin u s force fostering nuke ambitions,0,0,0,0,0,0
+test346,nuke detectors to ring new york official says,0,0,0,0,0,0
+test347,double bus bombing kills three in lebanon,0,0,0,0,0,0
+test348,davydenko out as seeds scattered,0,0,0,0,0,0
+test349,obama i m running for president,0,0,0,0,0,0
+test350,paterson boots scotland to victory,0,0,0,0,0,0
+test351,african americans are organ donors these days but what about bone marrow,0,0,0,0,0,0
+test352,study on the job naps might help heart,0,0,0,0,0,0
+test353,guinea capital largely calm under curfew marital law,0,0,0,0,0,0
+test354,bosses sleeping on idea of letting workers take naps,0,0,0,0,0,0
+test355,teacher s porn conviction sparks tech debate,0,0,0,0,0,0
+test356,singapore pampers its waterfront promenade,0,0,0,0,0,0
+test357,rwanda mulls three child limit,0,0,0,0,0,0
+test358,samsung settles price fixing lawsuit,0,0,0,0,0,0
+test359,radical cleric al sadr in iran u s insists,0,0,0,0,0,0
+test360,reports harvard set to name first female president,0,0,0,0,0,0
+test361,iraq unveils new security plans,0,0,0,0,0,0
+test362,university offers support to new orleans school,0,0,0,0,0,0
+test363,storm causes slick icy roads,0,0,0,0,0,0
+test364,south korea fire kills foreigners,0,0,0,0,0,0
+test365,prehistoric lovers found locked in eternal embrace,0,0,0,0,0,0
+test366,charts is your city lean or lethargic,0,0,0,0,0,0
+test367,peru leader questioned in massacre probe,0,0,0,0,0,0
+test368,u s commander iraq not hopeless,0,0,0,0,0,0
+test369,australian pm stands by obama attack,0,0,0,0,0,0
+test370,mardi gras rebound in the offing for new orleans,0,0,0,0,0,0
+test371,siestas may cut heart disease risk,0,0,0,0,0,0
+test372,oregon snorkeler mistaken for rodent shot in face,0,0,0,0,0,0
+test373,petraeus takes command in iraq,0,0,0,0,0,0
+test374,dead after utah mall shooting rampage,0,0,0,0,0,0
+test375,sharks kill four people in dull year,0,0,0,0,0,0
+test376,record shattering day on wall st,0,0,0,0,0,0
+test377,comedian says government silences critics,0,0,0,0,0,0
+test378,rockers big winners at brit awards,0,0,0,0,0,0
+test379,samba school leader killed before rio carnival,0,0,0,0,0,0
+test380,taiwan s mr clean indicted steps down,0,0,0,0,0,0
+test381,woman fights to keep drunken driver in jail,0,0,0,0,0,0
+test382,al qaeda group calls for attacks on u s oil,0,0,0,0,0,0
+test383,cousin gunman was srebrenica survivor,0,0,0,0,0,0
+test384,turkmenistan votes for president,0,0,0,0,0,0
+test385,here is some advice to take to heart,0,0,0,0,0,0
+test386,don t miss tax breaks,0,0,0,0,0,0
+test387,police break up kosovo protests,0,0,0,0,0,0
+test388,messi makes barcelona squad return,0,0,0,0,0,0
+test389,jump reported in accidental drug overdose deaths,0,0,0,0,0,0
+test390,catania punished for fan violence,0,0,0,0,0,0
+test391,isinbayeva sets th world record,0,0,0,0,0,0
+test392,lawmakers blast fda drug safety oversight,0,0,0,0,0,0
+test393,regular naps make hearts healthy,0,0,0,0,0,0
+test394,ice stops trolleys cold,0,0,0,0,0,0
+test395,u s gunman was srebrenica survivor,0,0,0,0,0,0
+test396,outdated baby food found on shelves,0,0,0,0,0,0
+test397,tow truck drivers accused of stealing cars,0,0,0,0,0,0
+test398,bush it s time for congress to back energy plan,0,0,0,0,0,0
+test399,uk soldiers cleared of iraq abuse,0,0,0,0,0,0
+test400,fda revises label warnings on the antibiotic ketek,0,0,0,0,0,0
+test401,toshiba portege r,0,0,0,0,0,0
+test402,south africa mourns adelaide tambo,0,0,0,0,0,0
+test403,evacuees can return home after plant blast,0,0,0,0,0,0
+test404,anna nicole smith s body lies in legal limbo,0,0,0,0,0,0
+test405,former teacher poses for playboy,0,0,0,0,0,0
+test406,france rejects rwandan investigators,0,0,0,0,0,0
+test407,a nap a day may keep the heart doctor away,0,0,0,0,0,0
+test408,higley gonzalez lead in malaysia,0,0,0,0,0,0
+test409,grammys ready to name winners,0,0,0,0,0,0
+test410,pound will not drop armstrong case,0,0,0,0,0,0
+test411,reunited police to start world tour in may,0,0,0,0,0,0
+test412,turkmen acting leader sworn in as new president,0,0,0,0,0,0
+test413,allen and okur get all star call,0,0,0,0,0,0
+test414,svindal claims are golden double,0,0,0,0,0,0
+test415,trolley square shooting leaves dead including gunman,0,0,0,0,0,0
+test416,bridge blast stops i traffic,0,0,0,0,0,0
+test417,mother daughter stabbed near school,0,0,0,0,0,0
+test418,excerpt politicians and the press,0,0,0,0,0,0
+test419,north korea gets money and respect,0,0,0,0,0,0
+test420,beyonce in a bikini as si s swimsuit cover model,0,0,0,0,0,0
+test421,loving with all your brain,0,0,0,0,0,0
+test422,shoplifters choice police or t shirt of shame,0,0,0,0,0,0
+test423,cuban official web a wild colt,0,0,0,0,0,0
+test424,slow music and lyrics,0,0,0,0,0,0
+test425,mexican navy helps in hunt for u s engineer,0,0,0,0,0,0
+test426,smith baby may not be pot of gold,0,0,0,0,0,0
+test427,latest updates on world s top stories,0,0,0,0,0,0
+test428,beating leaves teen in coma,0,0,0,0,0,0
+test429,tiempo libre has grammy dreams,0,0,0,0,0,0
+test430,gps sneakers locate with press of a button,0,0,0,0,0,0
+test431,embattled edwards blogger quits campaign,0,0,0,0,0,0
+test432,britons deported from somalia held under terrorism act,0,0,0,0,0,0
+test433,updates on world s top stories,0,0,0,0,0,0
+test434,breast cancer drug promises hope,0,0,0,0,0,0
+test435,ancient coin shows cleopatra was no beauty,0,0,0,0,0,0
+test436,youtube yields surprising payback,0,0,0,0,0,0
+test437,up to inches of snow in forecast,0,0,0,0,0,0
+test438,werder make man ajax pay price,0,0,0,0,0,0
+test439,eu condemns illegal cia flights,0,0,0,0,0,0
+test440,report links humans to global warming,0,0,0,0,0,0
+test441,un nuclear watchdog slashes iran aid,0,0,0,0,0,0
+test442,survey tech a tool in teen dating abuse,0,0,0,0,0,0
+test443,the breast cancer breakthrough saving women a year,0,0,0,0,0,0
+test444,tourist spot resists gravity but not progress,0,0,0,0,0,0
+test445,the nfl s biggest potential free agents,0,0,0,0,0,0
+test446,world tourism sets record in,0,0,0,0,0,0
+test447,ba to charge for an extra bag,0,0,0,0,0,0
+test448,kuerten returns to winners circle,0,0,0,0,0,0
+test449,world s oldest newspaper now exists only online,0,0,0,0,0,0
+test450,japanese whaler afire in antarctic,0,0,0,0,0,0
+test451,eu document iranian bomb unstoppable,0,0,0,0,0,0
+test452,u s urged to lead on green actions,0,0,0,0,0,0
+test453,see if your city is one of the united states top fittest or fattest,0,0,0,0,0,0
+test454,lee in pre world cup injury scare,0,0,0,0,0,0
+test455,new cancer drug to save a thousand lives a year,0,0,0,0,0,0
+test456,ex teacher guilty in nude pictures scheme,0,0,0,0,0,0
+test457,fire extinguisher part of tennessee execution kit,0,0,0,0,0,0
+test458,founder returns to dell helm,0,0,0,0,0,0
+test459,charles gibson takes over first place,0,0,0,0,0,0
+test460,ex border patrol agent beaten in prison,0,0,0,0,0,0
+test461,made in china irks some burberry shoppers,0,0,0,0,0,0
+test462,stonehenge workers village found,0,0,0,0,0,0
+test463,who is prince frederic von anhalt,0,0,0,0,0,0
+test464,latest food fad space potatoes,0,0,0,0,0,0
+test465,ethiopia readies for millennium all its own,0,0,0,0,0,0
+test466,good news for slackers naps may cut risk for heart problems,0,0,0,0,0,0
+test467,snowbirds shortening their florida stays,0,0,0,0,0,0
+test468,win a concert date with the police,0,0,0,0,0,0
+test469,snow begins heavy accumulations expected,0,0,0,0,0,0
+test470,jet flips in snowstorm none dead,0,0,0,0,0,0
+test471,frantic call in ryan o neal case,0,0,0,0,0,0
+test472,durant s success trumps the gators,0,0,0,0,0,0
+test473,scientist snoops in astronauts journals,0,0,0,0,0,0
+test474,youtube founders split m payout,0,0,0,0,0,0
+test475,african nation hopes whoopi can help,0,0,0,0,0,0
+test476,united hang on to six point lead,0,0,0,0,0,0
+test477,lawyer seizes smith s bahamas home,0,0,0,0,0,0
+test478,was prince s super show too revealing,0,0,0,0,0,0
+test479,clijsters looks for a long goodbye,0,0,0,0,0,0
+test480,snow s too deep even for snowmobiles,0,0,0,0,0,0
+test481,study female seals picky about mates,0,0,0,0,0,0
+test482,roundup protests erupt despite state of siege in guinea,0,0,0,0,0,0
+test483,study more kids exposed to online porn,0,0,0,0,0,0
+test484,beyonce new si bikini cover girl,0,0,0,0,0,0
+test485,marijuana helps ease hiv nerve pain study says,0,0,0,0,0,0
+test486,serena misses bangalore tournament,0,0,0,0,0,0
+test487,dryer blamed for fire killing cats dogs,0,0,0,0,0,0
+test488,roddick murray score in san jose,0,0,0,0,0,0
+test489,apple trademark dispute settled,0,0,0,0,0,0
+test490,u s online love brokers eye china,0,0,0,0,0,0
+test491,u s diverts troops to fight taliban,0,0,0,0,0,0
+test492,house of cards actor ian richardson dead,0,0,0,0,0,0
+test493,taliban leader killed in airstrike,0,0,0,0,0,0
+test494,escape to prague without the summer hordes,0,0,0,0,0,0
+test495,kathmandu first snow in years,0,0,0,0,0,0
+test496,nasdaq fails in bid for lse,0,0,0,0,0,0
+test497,ex pastor gets death sentence,0,0,0,0,0,0
+test498,baby born on turnpike after dad misses exit,0,0,0,0,0,0
+test499,study links chimps and hammers,0,0,0,0,0,0
+test500,un google earth map climate change,0,0,0,0,0,0
