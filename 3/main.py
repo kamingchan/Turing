@@ -47,3 +47,8 @@ class Emotion(object):
             return 0
 
 
+def read_file():
+    with open('Classification/train.txt') as f:
+        for line in f.readlines()[1:]:
+            line = line.replace('\n', '').split(' ')
+            yield int(line[1]), line[3:]
