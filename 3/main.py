@@ -52,9 +52,9 @@ class Emotion(object):
         """
         if laplace_smoothing is True:
             if word in self.__words_count:
-                return self.__words_count[word] + 1 / self.__total_words + len(self.__words_set)
+                return (self.__words_count[word] + 1) / (self.__total_words + len(self.__words_set))
             else:
-                return 1 / self.__total_words + len(self.__words_set)
+                return 1 / (self.__total_words + len(self.__words_set))
         else:
             if word in self.__words_count:
                 return self.__words_count[word] / self.__total_words
@@ -86,6 +86,7 @@ def classification():
             p = 1
             for word in words_list:
                 p *= emotion.get_word_probability(word, laplace_smoothing=True)
+            p *= emotion.probability
             if p > max_probability:
                 max_probability = p
                 max_probability_id = emotion_id
@@ -96,6 +97,10 @@ def classification():
             print('ToT', max_probability)
             wro += 1
     print(rig, wro, rig + wro)
+
+
+def regression():
+    pass
 
 
 if __name__ == '__main__':
