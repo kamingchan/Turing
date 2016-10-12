@@ -66,14 +66,13 @@ class Emotion(object):
                 return 0
 
 
-def read_file(file_name):
-    with open(file_name) as f:
-        for line in f.readlines()[1:]:
-            line = line.replace('\n', '').split(' ')
-            yield int(line[1]), line[3:]
-
-
 def classification():
+    def read_file(file_name):
+        with open(file_name) as f:
+            for line in f.readlines()[1:]:
+                line = line.replace('\n', '').split(' ')
+                yield int(line[1]), line[3:]
+
     emotions = dict()
     for i in range(1, 7):
         emotions[i] = Emotion(i)
@@ -103,9 +102,73 @@ def classification():
     print(rig, wro, rig + wro)
 
 
+class Text(object):
+    def __init__(self, emotion_rate, words):
+        self.__size = len(words)
+        self.__words_count = dict()
+        self.__emotion_rate = emotion_rate
+        for word in words:
+            if word in self.__words_count:
+                self.__words_count[word] += 1
+            else:
+                self.__words_count[word] = 1
+
+    @property
+    def words(self):
+        return [word for word in self.__words_count]
+
+    def get_word_probability(self, word, laplace_smoothing=False):
+        if laplace_smoothing is True:
+            if word in self.__words_count:
+                return (self.__words_count[word] + 1) / (self.__size + len(self.__words_count))
+            else:
+                return 1 / (self.__size + len(self.__words_count))
+        else:
+            if word in self.__words_count:
+                return self.__words_count[word] / self.__size
+            else:
+                return 0
+
+    def get_emotion_rate(self, emotion_id):
+        return self.__emotion_rate[emotion_id]
+
+
 def regression():
-    pass
+    def read_file(file_name):
+        with open(file_name) as f:
+            for line in f.readlines()[1:]:
+                line = line.replace('\n', '').split(',')
+                yield [float(x) for x in line[2:]], line[1].split(' ')
+
+    emotions = dict()
+    for i in range(6):
+        emotions[i] = Emotion(i)
+
+    train_list = list()
+    for emotion_rate, words in read_file('Regression/Dataset_train.csv'):
+        train_list.append(Text(emotion_rate, words))
+    valid_list = list()
+    for emotion_rate, words in read_file('Regression/Dataset_validation.csv'):
+        valid_list.append(Text(emotion_rate, words))
+
+    result = list()
+    for valid_text in valid_list:
+        r_v = list()
+        for emotion_id in range(6):
+            p = 0
+            for test_text in valid_list:
+                p_t = 1
+                for word in valid_text.words:
+                    p_t *= test_text.get_word_probability(word, laplace_smoothing=False)
+                p += p_t * test_text.get_emotion_rate(emotion_id)
+            r_v.append(p)
+        total = sum(r_v)
+        r_v = [str(rate / total) for rate in r_v]
+        result.append(r_v)
+    for ele in result:
+        print(' '.join(ele))
 
 
 if __name__ == '__main__':
-    classification()
+    # classification()
+    regression()
