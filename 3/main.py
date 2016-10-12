@@ -52,6 +52,10 @@ class Emotion(object):
         """
         if laplace_smoothing is True:
             if word in self.__words_count:
+                """
+                return self.__words_count[word]
+                正确率奇高？？？
+                """
                 return (self.__words_count[word] + 1) / (self.__total_words + len(self.__words_set))
             else:
                 return 1 / (self.__total_words + len(self.__words_set))
