@@ -157,11 +157,11 @@ def regression():
         r_v = list()
         for emotion_id in range(6):
             p = 0
-            for test_text in train_list:
-                p_t = 1
+            for train_text in train_list:
+                p_t = train_text.get_emotion_rate(emotion_id)
                 for word in valid_text.words:
-                    p_t *= test_text.get_word_probability(word, laplace_smoothing=True)
-                p += p_t * test_text.get_emotion_rate(emotion_id)
+                    p_t *= train_text.get_word_probability(word, laplace_smoothing=False)
+                p += p_t
             r_v.append(p)
         total = sum(r_v)
         if total == 0.0:
