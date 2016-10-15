@@ -145,10 +145,6 @@ def regression():
                 line = line.replace('\n', '').split(',')
                 yield [float(x) for x in line[2:]], line[1].split(' ')
 
-    emotions = dict()
-    for i in range(6):
-        emotions[i] = Emotion(i)
-
     train_list = list()
     for emotion_rate, words in read_file('Regression/Dataset_train.csv'):
         train_list.append(Text(emotion_rate, words))
@@ -179,5 +175,5 @@ def regression():
 
 
 if __name__ == '__main__':
-    # classification()
+    classification()
     regression()
