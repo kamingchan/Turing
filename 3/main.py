@@ -118,6 +118,11 @@ class Text(object):
         return [word for word in self.__words_count]
 
     def get_word_probability(self, word, laplace_smoothing=False):
+        """
+        :param word:
+        :param laplace_smoothing:
+        :return: TF 词频
+        """
         if laplace_smoothing is True:
             if word in self.__words_count:
                 return (self.__words_count[word] + 1) / (self.__size + len(self.__words_count))
@@ -156,17 +161,21 @@ def regression():
         r_v = list()
         for emotion_id in range(6):
             p = 0
-            for test_text in valid_list:
+            for test_text in train_list:
                 p_t = 1
                 for word in valid_text.words:
-                    p_t *= test_text.get_word_probability(word, laplace_smoothing=False)
+                    p_t *= test_text.get_word_probability(word, laplace_smoothing=True)
                 p += p_t * test_text.get_emotion_rate(emotion_id)
             r_v.append(p)
         total = sum(r_v)
-        r_v = [str(rate / total) for rate in r_v]
+        if total == 0.0:
+            r_v = ['0' for rate in r_v]
+        else:
+            r_v = [str(rate / total) for rate in r_v]
         result.append(r_v)
-    for ele in result:
-        print(' '.join(ele))
+    with open('reg_res.txt', 'wt') as f:
+        for ele in result:
+            f.writelines(' '.join(ele) + '\n')
 
 
 if __name__ == '__main__':
