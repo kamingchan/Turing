@@ -44,8 +44,9 @@ class Emotion(object):
         Emotion.__global_count += 1
         self.__self_count += 1
 
-    def get_word_probability(self, word, laplace_smoothing=False):
+    def get_word_probability(self, word, laplace_smoothing=False, alpha=1):
         """
+        :param alpha:
         :param word: 一个测试集单词
         :param laplace_smoothing: 是否开启拉普拉斯平滑
         :return: 返回该单词在该情感中出现的未归一化概率
@@ -56,9 +57,9 @@ class Emotion(object):
                 return self.__words_count[word]
                 正确率奇高？？？
                 """
-                return (self.__words_count[word] + 1) / (self.__total_words + len(self.__words_set))
+                return (self.__words_count[word] + alpha) / (self.__total_words + len(self.__words_set) * alpha)
             else:
-                return 1 / (self.__total_words + len(self.__words_set))
+                return alpha / (self.__total_words + len(self.__words_set) * alpha)
         else:
             if word in self.__words_count:
                 return self.__words_count[word] / self.__total_words
@@ -88,7 +89,7 @@ def classification():
         for emotion_id, emotion in emotions.items():
             p = 1
             for word in words_list:
-                p *= emotion.get_word_probability(word, laplace_smoothing=True)
+                p *= emotion.get_word_probability(word, laplace_smoothing=True, alpha=0.00001)
             p *= emotion.probability
             if p > max_probability:
                 max_probability = p
