@@ -118,7 +118,7 @@ class Text(object):
     def words(self):
         return [word for word in self.__words_count]
 
-    def get_word_probability(self, word, laplace_smoothing=False):
+    def get_word_probability(self, word, laplace_smoothing=False, alpha=1):
         """
         :param word:
         :param laplace_smoothing:
@@ -126,9 +126,9 @@ class Text(object):
         """
         if laplace_smoothing is True:
             if word in self.__words_count:
-                return (self.__words_count[word] + 1) / (self.__size + len(self.__words_count))
+                return (self.__words_count[word] + alpha) / (self.__size + len(self.__words_count) * alpha)
             else:
-                return 1 / (self.__size + len(self.__words_count))
+                return alpha / (self.__size + len(self.__words_count) * alpha)
         else:
             if word in self.__words_count:
                 return self.__words_count[word] / self.__size
@@ -161,12 +161,12 @@ def regression():
             for train_text in train_list:
                 p_t = train_text.get_emotion_rate(emotion_id)
                 for word in valid_text.words:
-                    p_t *= train_text.get_word_probability(word, laplace_smoothing=False)
+                    p_t *= train_text.get_word_probability(word, laplace_smoothing=True, alpha=0.001)
                 p += p_t
             r_v.append(p)
         total = sum(r_v)
-        if total == 0.0:
-            r_v = ['0' for rate in r_v]
+        if total is 0.0:
+            r_v = [str(rate) for rate in r_v]
         else:
             r_v = [str(rate / total) for rate in r_v]
         result.append(r_v)
