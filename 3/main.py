@@ -14,6 +14,11 @@ class Emotion(object):
         self.__self_count = 0
 
     def add(self, word, n=1):
+        """
+        表示这个单词在这个情感中出现
+        :param word: 单词
+        :param n: 出现个数，默认 1
+        """
         if word in self.__words_count:
             self.__words_count[word] += n
         else:
@@ -24,11 +29,6 @@ class Emotion(object):
     @property
     def id(self):
         return self.__emotion_id
-
-    # todo： 这个接口不一定有用
-    # @property
-    # def size(self):
-    #     return self.__total_words
 
     @property
     def probability(self):
@@ -46,17 +46,13 @@ class Emotion(object):
 
     def get_word_probability(self, word, laplace_smoothing=False, alpha=1):
         """
-        :param alpha:
+        :param alpha: 0-1 之间的参数，取决于 label 的多少
         :param word: 一个测试集单词
         :param laplace_smoothing: 是否开启拉普拉斯平滑
         :return: 返回该单词在该情感中出现的未归一化概率
         """
         if laplace_smoothing is True:
             if word in self.__words_count:
-                """
-                return self.__words_count[word]
-                正确率奇高？？？
-                """
                 return (self.__words_count[word] + alpha) / (self.__total_words + len(self.__words_set) * alpha)
             else:
                 return alpha / (self.__total_words + len(self.__words_set) * alpha)
@@ -69,6 +65,10 @@ class Emotion(object):
 
 def classification():
     def read_file(file_name):
+        """
+        分类的分词 generator
+        :rtype: emotion_id, [word1, word2, ..., wordn]
+        """
         with open(file_name) as f:
             for line in f.readlines()[1:]:
                 line = line.replace('\n', '').split(' ')
@@ -81,32 +81,32 @@ def classification():
         emotions[emotion_id].appear()
         for word in words_list:
             emotions[emotion_id].add(word)
-    rig = 0
-    wro = 0
+    right = 0
+    wrong = 0
     for answer_id, words_list in read_file('Classification/test.txt'):
         max_probability_id = None
         max_probability = 0
         for emotion_id, emotion in emotions.items():
-            p = 1
+            p = emotion.probability
             for word in words_list:
                 p *= emotion.get_word_probability(word, laplace_smoothing=True, alpha=0.00001)
-            p *= emotion.probability
             if p > max_probability:
                 max_probability = p
                 max_probability_id = emotion_id
         if max_probability_id == answer_id:
-            print('Hhh', max_probability)
-            rig += 1
+            right += 1
         else:
-            print('ToT', max_probability)
-            wro += 1
-    print(rig, wro, rig + wro)
+            wrong += 1
+    print(right, wrong, right / (right + wrong))
 
 
 class Text(object):
     def __init__(self, emotion_rate, words):
+        # 不重复词个数
         self.__size = len(words)
+        # 每个词出现次数
         self.__words_count = dict()
+        # 感情频率
         self.__emotion_rate = emotion_rate
         for word in words:
             if word in self.__words_count:
@@ -116,12 +116,16 @@ class Text(object):
 
     @property
     def words(self):
+        """
+        :return: Text 所有词的 list
+        """
         return [word for word in self.__words_count]
 
     def get_word_probability(self, word, laplace_smoothing=False, alpha=1):
         """
-        :param word:
-        :param laplace_smoothing:
+        :param alpha: 0-1 优化参数，取决于 label 的个数
+        :param word: 单词
+        :param laplace_smoothing: 是否开启拉普拉斯平滑
         :return: TF 词频
         """
         if laplace_smoothing is True:
@@ -136,6 +140,10 @@ class Text(object):
                 return 0
 
     def get_emotion_rate(self, emotion_id):
+        """
+        :param emotion_id: 0-5 六个感情的 id
+        :return: 概率
+        """
         return self.__emotion_rate[emotion_id]
 
 
@@ -146,6 +154,18 @@ def regression():
                 line = line.replace('\n', '').split(',')
                 yield [float(x) for x in line[2:]], line[1].split(' ')
 
+    def normalize(rate_list):
+        """
+        归一化
+        :param rate_list: 情感概率列表
+        :return: 归一化后感情概率，为了方便格式化输出，已经转为 string
+        """
+        rate_sum = sum(rate_list)
+        if rate_sum is 0.0:
+            return ['0' for rate in rate_list]
+        else:
+            return [str(rate / rate_sum) for rate in rate_list]
+
     train_list = list()
     for emotion_rate, words in read_file('Regression/Dataset_train.csv'):
         train_list.append(Text(emotion_rate, words))
@@ -153,26 +173,18 @@ def regression():
     for emotion_rate, words in read_file('Regression/Dataset_validation.csv'):
         valid_list.append(Text(emotion_rate, words))
 
-    result = list()
-    for valid_text in valid_list:
-        r_v = list()
-        for emotion_id in range(6):
-            p = 0
-            for train_text in train_list:
-                p_t = train_text.get_emotion_rate(emotion_id)
-                for word in valid_text.words:
-                    p_t *= train_text.get_word_probability(word, laplace_smoothing=True, alpha=0.001)
-                p += p_t
-            r_v.append(p)
-        total = sum(r_v)
-        if total is 0.0:
-            r_v = [str(rate) for rate in r_v]
-        else:
-            r_v = [str(rate / total) for rate in r_v]
-        result.append(r_v)
     with open('reg_res.txt', 'wt') as f:
-        for ele in result:
-            f.writelines(' '.join(ele) + '\n')
+        for valid_text in valid_list:
+            p_list = list()
+            for emotion_id in range(6):
+                total_p = 0
+                for train_text in train_list:
+                    tf_p = train_text.get_emotion_rate(emotion_id)
+                    for word in valid_text.words:
+                        tf_p *= train_text.get_word_probability(word, laplace_smoothing=True, alpha=0.001)
+                    total_p += tf_p
+                p_list.append(total_p)
+            f.writelines(' '.join(normalize(p_list)) + '\n')
 
 
 if __name__ == '__main__':
