@@ -152,7 +152,10 @@ def regression():
         with open(file_name) as f:
             for line in f.readlines()[1:]:
                 line = line.replace('\n', '').split(',')
-                yield [float(x) for x in line[2:]], line[1].split(' ')
+                try:
+                    yield [float(x) for x in line[2:]], line[1].split(' ')
+                except ValueError:
+                    yield None, line[1].split(' ')
 
     def normalize(rate_list):
         """
@@ -161,7 +164,7 @@ def regression():
         :return: 归一化后感情概率，为了方便格式化输出，已经转为 string
         """
         rate_sum = sum(rate_list)
-        if rate_sum is 0.0:
+        if rate_sum == 0.0:
             return ['0' for rate in rate_list]
         else:
             return [str(rate / rate_sum) for rate in rate_list]
@@ -170,7 +173,7 @@ def regression():
     for emotion_rate, words in read_file('Regression/Dataset_train.csv'):
         train_list.append(Text(emotion_rate, words))
     valid_list = list()
-    for emotion_rate, words in read_file('Regression/Dataset_validation.csv'):
+    for emotion_rate, words in read_file('Regression/Dataset_test.csv'):
         valid_list.append(Text(emotion_rate, words))
 
     with open('reg_res.txt', 'wt') as f:
@@ -181,7 +184,7 @@ def regression():
                 for train_text in train_list:
                     tf_p = train_text.get_emotion_rate(emotion_id)
                     for word in valid_text.words:
-                        tf_p *= train_text.get_word_probability(word, laplace_smoothing=True, alpha=0.001)
+                        tf_p *= train_text.get_word_probability(word, laplace_smoothing=True, alpha=0.00001)
                     total_p += tf_p
                 p_list.append(total_p)
             f.writelines(' '.join(normalize(p_list)) + '\n')
