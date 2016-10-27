@@ -57,20 +57,43 @@ def read_file(data_file, label_file):
             yield [int(x) for x in data_l.replace(' \n', '').split(' ')], int(label_l)
 
 
-def learning(_train_list, _w, find_max=False):
-    _max = 0
-    _inc = 0
-    for ele in _train_list:
-        if sign(ele.vector.dot(_w)) != ele.label and abs(ele.vector.dot(_w) - ele.label) > _max:
-            _max = abs(ele.vector.dot(_w) - ele.label)
-            _inc = ele.vector * ele.label
-            if find_max is False:
-                break
-    if _max == 0:
+def learning(_train_list, _w, enhance=''):
+    if enhance is 'pocket':
+        _best = 0
+        _inc = None
+        for ele in train_list:
+            if sign(ele.vector.dot(_w)) != ele.label:
+                _inc = ele.vector * ele.label
+                _s = Score(_w + _inc)
+                for e in train_list:
+                    _s.test(e)
+                if _s.accuracy > _best:
+                    _best = _s.accuracy
+        if _inc is None:
+            return True
+        else:
+            _w += _inc
+            return False
+    elif enhance is 'find_max':
+        _max = 0
+        _inc = None
+        for ele in _train_list:
+            if sign(ele.vector.dot(_w)) != ele.label and abs(ele.vector.dot(_w) - ele.label) > _max:
+                _max = abs(ele.vector.dot(_w) - ele.label)
+                _inc = ele.vector * ele.label
+        if _inc is None:
+            return True
+        else:
+            _w += _inc
+            return False
+    elif enhance is '':
+        for ele in _train_list:
+            if sign(ele.vector.dot(_w)) != ele.label:
+                _w += ele.vector * ele.label
+                return False
         return True
     else:
-        _w += _inc
-        return False
+        raise TypeError('%s is not a enhance method.' % enhance)
 
 
 if __name__ == '__main__':
@@ -79,9 +102,10 @@ if __name__ == '__main__':
         train_list.append(Sample(vector, label))
     w = zeros(Sample.length, dtype='float64')
     cnt = 0
-    while learning(train_list, w, find_max=True) is False:
+    while learning(train_list, w, enhance='pocket') is False and cnt < 1000:
         cnt += 1
         print('%d times, w vector is: %s' % (cnt, w))
+    print('End!')
     s = Score(w)
     for vector, label in read_file('data/test_data.txt', 'data/test_labels.txt'):
         s.test(Sample(vector, label))
