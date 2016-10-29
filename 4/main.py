@@ -58,14 +58,23 @@ def read_file(data_file, label_file):
 
 
 def learning(_train_list, _w, enhance=''):
+    """
+    :param _train_list: 训练集
+    :param _w: w 向量
+    :param enhance: 优化策略
+    :return: 若能全部划分，返回 True；否则更新一次 w 之后返回 False
+    """
     if enhance is 'pocket':
+        # 当前最优
         _best = 0
         _inc = None
         for ele in train_list:
             if sign(ele.vector.dot(_w)) != ele.label:
+                # 找到一个分类错误
                 _inc = ele.vector * ele.label
                 _s = Score(_w + _inc)
                 for e in train_list:
+                    # 使用新的 w 统计分类正确率
                     _s.test(e)
                 if _s.accuracy > _best:
                     _best = _s.accuracy
@@ -79,6 +88,7 @@ def learning(_train_list, _w, enhance=''):
         _inc = None
         for ele in _train_list:
             if sign(ele.vector.dot(_w)) != ele.label and abs(ele.vector.dot(_w) - ele.label) > _max:
+                # 找出偏离超平面最远的点
                 _max = abs(ele.vector.dot(_w) - ele.label)
                 _inc = ele.vector * ele.label
         if _inc is None:
