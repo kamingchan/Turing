@@ -75,7 +75,7 @@ def learning(_train_list, _w, _yita):
     for ele in _train_list:
         if (sigmoid(ele.vector.dot(_w)) >= 0.5) != ele.label:
             _w -= _yita * err(_train_list, _w)
-        return False
+            return False
     return True
 
 
