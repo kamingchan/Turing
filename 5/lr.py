@@ -2,7 +2,7 @@ from numpy import array, zeros, e
 
 
 def sigmoid(_s):
-    return 1 / (1 + e ** -_s)
+    return 1 / (1 + power(e, -_s))
 
 
 class Sample(object):
