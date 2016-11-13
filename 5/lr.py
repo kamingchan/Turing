@@ -1,4 +1,4 @@
-from numpy import array, zeros, e
+from numpy import array, zeros, e, power
 
 
 def sigmoid(_s):
@@ -41,19 +41,31 @@ class Score(object):
 
     @property
     def accuracy(self):
-        return (self.tp + self.tn) / (self.tp + self.fp + self.tn + self.fn)
+        try:
+            return (self.tp + self.tn) / (self.tp + self.fp + self.tn + self.fn)
+        except ZeroDivisionError:
+            return None
 
     @property
     def recall(self):
-        return self.tp / (self.tp + self.fn)
+        try:
+            return self.tp / (self.tp + self.fn)
+        except ZeroDivisionError:
+            return None
 
     @property
     def precision(self):
-        return self.tp / (self.tp + self.fp)
+        try:
+            return self.tp / (self.tp + self.fp)
+        except ZeroDivisionError:
+            return None
 
     @property
     def f1(self):
-        return 2 * self.precision + self.recall / (self.precision + self.recall)
+        try:
+            return 2 * self.precision + self.recall / (self.precision + self.recall)
+        except TypeError:
+            return None
 
 
 def read_file(data_file):
@@ -71,29 +83,43 @@ def err(_train_list, _w):
     return _delta_err
 
 
-def learning(_train_list, _w, _yita):
-    for ele in _train_list:
-        if (sigmoid(ele.vector.dot(_w)) >= 0.5) != ele.label:
-            _w -= _yita * err(_train_list, _w)
-            return False
-    return True
-
-
 if __name__ == '__main__':
     train_list = list()
     for vector, label in read_file('data/train.csv'):
         train_list.append(Sample(vector, label))
     w = zeros(Sample.length, dtype='float64')
     count = 0
-    yita = 0.0001
-    while learning(train_list, w, yita) is False and count < 10000:
+    yita = 1 / Sample.length
+    last_accuracy = 0
+    best_accuracy = 0
+    best_w = None
+    while count < 300:
+        w -= yita * err(train_list, w)
         count += 1
-        yita *= 0.9
-        print('%d times, w vector is: %s' % (count, w))
-    s = Score(w)
+        print('%d times' % count)
+        print('Current yita:', yita)
+        print('w vector is: %s' % w)
+        s = Score(w)
+        for vector, label in read_file('data/train.csv'):
+            s.test(Sample(vector, label))
+        print('Accuracy:', s.accuracy)
+        if s.accuracy >= last_accuracy:
+            yita *= 0.999
+        else:
+            yita *= 0.99
+        if s.accuracy > best_accuracy:
+            best_w = w.copy()
+            best_accuracy = s.accuracy
+        last_accuracy = s.accuracy
+        print('Recall:', s.recall)
+        print('Precision:', s.precision)
+        print('F1:', s.f1)
+        print('\n')
+
+    s = Score(best_w)
     for vector, label in read_file('data/test.csv'):
         s.test(Sample(vector, label))
-    print('Accuracy: ', s.accuracy)
-    print('Recall: ', s.recall)
-    print('Precision: ', s.precision)
-    print('F1: ', s.f1)
+    print('Accuracy:', s.accuracy)
+    print('Recall:', s.recall)
+    print('Precision:', s.precision)
+    print('F1:', s.f1)
