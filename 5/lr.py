@@ -72,7 +72,7 @@ def read_file(data_file):
     with open(data_file) as file:
         for line in file.readlines():
             line = [int(x) for x in line.replace('\n', '').split(',')]
-            yield line[:-2], line[-1]
+            yield line[:-1], line[-1]
 
 
 def err(_train_list, _w):
@@ -104,7 +104,7 @@ if __name__ == '__main__':
             s.test(Sample(vector, label))
         print('Accuracy:', s.accuracy)
         if s.accuracy >= last_accuracy:
-            yita *= 0.999
+            yita *= 1.001
         else:
             yita *= 0.99
         if s.accuracy > best_accuracy:
