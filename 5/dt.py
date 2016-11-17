@@ -1,4 +1,5 @@
 from math import log, inf
+from beeprint import pp
 
 
 class Sample(object):
@@ -83,23 +84,28 @@ if __name__ == '__main__':
             if id3(current_node.id, value, samples) != inf:
                 wait_node.append(node)
             else:
-                node.label = samples[0].label
+                node.label = list(filter(lambda x: x.vector[current_node.id] == value, samples))[0].label
     # Test
     test_list = list()
-    for vector, label in read_file('data/train.csv'):
+    for vector, label in read_file('data/test.csv'):
         test_list.append(Sample(vector, label))
     r = 0
     w = 0
+    d = 0
     for test in test_list:
         current_node = tree
         while current_node.id is not None:
             attribute_id = current_node.id
             value = test.vector[attribute_id]
-            current_node = current_node.sub_nodes[value]
-        if current_node.label == test.label:
-            print('HHH')
-            r += 1
-        else:
-            print('ToT')
-            w += 1
-    print(r, w, r / (r + w))
+            try:
+                current_node = current_node.sub_nodes[value]
+            except KeyError:
+                break
+        try:
+            if current_node.label == test.label:
+                r += 1
+            else:
+                w += 1
+        except AttributeError:
+            d += 1
+    print(r, w, d, r / (r + w + d))
