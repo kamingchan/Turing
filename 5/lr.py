@@ -32,7 +32,7 @@ class Score(object):
             if sigmoid(_test_case.vector.dot(self.w)) > 0.5:
                 self.tp += 1
             else:
-                self.fp += 1
+                self.fn += 1
         else:
             if sigmoid(_test_case.vector.dot(self.w)) > 0.5:
                 self.fp += 1
