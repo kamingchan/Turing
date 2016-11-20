@@ -57,7 +57,11 @@ def split_info(_id, _value, _samples):
     _len_total = len(_samples)
     _len_p = len(list(filter(lambda x: x.vector[_id] == _value, _samples)))
     _len_n = _len_total - _len_p
-    return -(_len_p / _len_total + log(_len_p / _len_total, 2)) - (_len_n / _len_total + log(_len_n / _len_total, 2))
+    try:
+        return -(_len_p / _len_total + log(_len_p / _len_total, 2)) - (
+            _len_n / _len_total + log(_len_n / _len_total, 2))
+    except ValueError:
+        return inf
 
 
 def c4dot5(_id, _value, _samples):
