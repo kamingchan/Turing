@@ -107,7 +107,6 @@ if __name__ == '__main__':
             current_node.sub_nodes[value] = node
             judge = c4dot5(current_node.id, value, samples)
             if judge < inf and len(node.remain_id) > 0:
-                print(judge)
                 if len(list(filter(lambda x: x.label == 1, samples))) > len(
                         list(filter(lambda x: x.label == 0, samples))):
                     node.label = 1

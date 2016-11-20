@@ -115,7 +115,6 @@ if __name__ == '__main__':
         print('Precision:', s.precision)
         print('F1:', s.f1)
         print('\n')
-
     s = Score(best_w)
     for vector, label in read_file('data/test.csv'):
         s.test(Sample(vector, label))
