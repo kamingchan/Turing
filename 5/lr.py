@@ -89,24 +89,24 @@ if __name__ == '__main__':
         train_list.append(Sample(vector, label))
     w = zeros(Sample.length, dtype='float64')
     count = 0
-    yita = 1 / Sample.length
+    eta = 1 / Sample.length
     last_accuracy = 0
     best_accuracy = 0
     best_w = None
     while count < 300:
-        w -= yita * err(train_list, w)
+        w -= eta * err(train_list, w)
         count += 1
         print('%d times' % count)
-        print('Current yita:', yita)
+        print('Current eta:', eta)
         print('w vector is: %s' % w)
         s = Score(w)
         for vector, label in read_file('data/train.csv'):
             s.test(Sample(vector, label))
         print('Accuracy:', s.accuracy)
         if s.accuracy >= last_accuracy:
-            yita *= 1.001
+            eta *= 1.001
         else:
-            yita *= 0.99
+            eta *= 0.99
         if s.accuracy > best_accuracy:
             best_w = w.copy()
             best_accuracy = s.accuracy
