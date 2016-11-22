@@ -31,18 +31,13 @@ def read_file(_data_file):
 def entropy(_samples):
     p_0 = len(list(filter(lambda x: x.label == 0, _samples))) / len(_samples)
     p_1 = len(list(filter(lambda x: x.label == 1, _samples))) / len(_samples)
+    # todo: 这里不需要统计为 0 的情况
     return -p_0 * log(p_0, 2) - p_1 * log(p_1, 2)
 
 
 def id3(_id, _value, _samples):
-    try:
-        e = entropy(_samples)
-    except ValueError:
-        return 0
-    try:
-        e_v = entropy(list(filter(lambda x: x.vector[_id] == _value, _samples)))
-    except ValueError:
-        return inf
+    e = entropy(_samples)
+    e_v = entropy(list(filter(lambda x: x.vector[_id] == _value, _samples)))
     return e - e_v
 
 
@@ -95,6 +90,7 @@ if __name__ == '__main__':
         best_id = None
         for attribute_id in remain_id:
             total_enhance = sum([id3(attribute_id, x, samples) for x in attributes(samples, attribute_id)])
+            # todo: 这里统计的时候是二叉的，后面分枝却不是二叉的
             if total_enhance > max_enhance:
                 best_id = attribute_id
                 max_enhance = total_enhance
