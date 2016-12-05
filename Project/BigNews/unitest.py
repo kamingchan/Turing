@@ -42,7 +42,7 @@ tl = read_file('data/test.csv', range(36, 58))
 
 with open('084_1.txt', 'wt') as f:
     for t in tl:
-        if sigmoid(t.vector.dot(w)) > 0.5:
+        if sigmoid(t.vector.dot(w)) > 0.4:
             f.writelines('1\n')
         else:
             f.writelines('0\n')

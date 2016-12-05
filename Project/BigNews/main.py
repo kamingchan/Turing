@@ -30,12 +30,12 @@ class Score(object):
 
     def test(self, _test_case):
         if _test_case.label == 1:
-            if sigmoid(_test_case.vector.dot(self.w)) > 0.5:
+            if sigmoid(_test_case.vector.dot(self.w)) > 0.4:
                 self.tp += 1
             else:
                 self.fn += 1
         else:
-            if sigmoid(_test_case.vector.dot(self.w)) > 0.5:
+            if sigmoid(_test_case.vector.dot(self.w)) > 0.4:
                 self.fp += 1
             else:
                 self.tn += 1
@@ -102,8 +102,8 @@ if __name__ == '__main__':
     w = zeros(Sample.length, dtype='float64')
     count = 0
     eta = 0.0001
-    last_accuracy = 0
-    best_accuracy = 0
+    last_f1 = 0
+    best_f1 = 0
     best_w = None
     while count < 30000000:
         w -= eta * err(train_list, w)
@@ -116,16 +116,14 @@ if __name__ == '__main__':
             for v in valid_list:
                 s.test(v)
             print('Accuracy:', s.accuracy)
-            if s.accuracy >= last_accuracy:
+            if s.f1 >= last_f1:
                 eta *= 1.00001
             else:
                 eta *= 0.999
-            if s.accuracy > best_accuracy:
+            if s.f1 > best_f1:
                 best_w = w.copy()
-                best_accuracy = s.accuracy
-            last_accuracy = s.accuracy
-            print('Best Accuracy:', best_accuracy)
-            print('Recall:', s.recall)
-            print('Precision:', s.precision)
+                best_f1 = s.f1
+            last_f1 = s.f1
+            print('Best F1:', best_f1)
             print('F1:', s.f1)
             print('\n')
