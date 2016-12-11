@@ -1,3 +1,5 @@
+import json
+
 from numpy import array, zeros, e, power
 from numpy.random import random
 
@@ -30,12 +32,12 @@ class Score(object):
 
     def test(self, _test_case):
         if _test_case.label == 1:
-            if sigmoid(_test_case.vector.dot(self.w)) > 0.4:
+            if sigmoid(_test_case.vector.dot(self.w)) > 0.3:
                 self.tp += 1
             else:
                 self.fn += 1
         else:
-            if sigmoid(_test_case.vector.dot(self.w)) > 0.4:
+            if sigmoid(_test_case.vector.dot(self.w)) > 0.3:
                 self.fp += 1
             else:
                 self.tn += 1
@@ -45,43 +47,42 @@ class Score(object):
         try:
             return (self.tp + self.tn) / (self.tp + self.fp + self.tn + self.fn)
         except ZeroDivisionError:
-            return None
+            return 0
 
     @property
     def recall(self):
         try:
             return self.tp / (self.tp + self.fn)
         except ZeroDivisionError:
-            return None
+            return 0
 
     @property
     def precision(self):
         try:
             return self.tp / (self.tp + self.fp)
         except ZeroDivisionError:
-            return None
+            return 0
 
     @property
     def f1(self):
         try:
             return 2 * self.precision * self.recall / (self.precision + self.recall)
-        except TypeError:
-            return None
+        except ZeroDivisionError:
+            return 0
 
 
-def read_file(data_file, train_rate, selected_cols):
+def read_file(data_file, train_rate):
     """
 
-    :param data_file:
+    :param data_file: json
     :param train_rate: 0-1, divide train list into train or test
-    :param selected_cols: columns selected
     """
     _train_list = list()
     _valid_list = list()
     with open(data_file) as file:
-        for line in file.readlines()[1:]:
-            line = [float(x) for x in line.replace('\n', '').split(',')]
-            _s = Sample([line[x] for x in selected_cols], line[-1])
+        _data = json.load(file)
+        for _sample in _data:
+            _s = Sample(_sample['line'], _sample['label'])
             if random(1) < train_rate:
                 _train_list.append(_s)
             else:
@@ -98,32 +99,32 @@ def err(_train_list, _w):
 
 
 if __name__ == '__main__':
-    train_list, valid_list = read_file('data/train.csv', 0.8, range(36, 58))
+    train_list, valid_list = read_file('data/train.json', 0.8)
     w = zeros(Sample.length, dtype='float64')
     count = 0
-    eta = 0.0001
+    eta = 0.00005
     last_f1 = 0
     best_f1 = 0
     best_w = None
     while count < 30000000:
         w -= eta * err(train_list, w)
         count += 1
-        if count % 2 == 0:
-            print('%d times' % count)
-            print('Current eta:', eta)
+        s = Score(w)
+        for v in valid_list:
+            s.test(v)
+        if s.f1 >= last_f1:
+            eta *= 1.000001
+        else:
+            eta *= 0.9
+        last_f1 = s.f1
+        print('%d times' % count)
+        print('Current eta:', eta)
+        print('F1:', s.f1)
+        print(s.tp, s.fp, s.fn)
+        if last_f1 > best_f1:
+            best_w = w.copy()
+            best_f1 = last_f1
             print('w vector is: %s' % w)
-            s = Score(w)
-            for v in valid_list:
-                s.test(v)
             print('Accuracy:', s.accuracy)
-            if s.f1 >= last_f1:
-                eta *= 1.00001
-            else:
-                eta *= 0.999
-            if s.f1 > best_f1:
-                best_w = w.copy()
-                best_f1 = s.f1
-            last_f1 = s.f1
             print('Best F1:', best_f1)
-            print('F1:', s.f1)
             print('\n')
