@@ -1,3 +1,6 @@
+from random import random
+
+
 class Emotion(object):
     # 所有情感在测试集出现的次数，实则是测试集的大小，封装一下方便统计
     __global_count = 0
@@ -58,13 +61,15 @@ class Emotion(object):
                 return 0
 
 
-def read_file(_file_name):
+def read_file(_file_name, _rand=False):
     _stop_words = set()
     with open('data/stop_words.txt') as f:
         for _line in f.readlines():
             _stop_words.add(_line.replace('\n', ''))
     with open(_file_name) as f:
         for _line in f.readlines():
+            if random() < 0.1 and _rand:
+                pass
             _line = _line.replace('\n', '').split(',')
             _emotion, _words = _line[0], _line[1].split(' ')
             _words = filter(lambda x: x not in _stop_words, _words)
@@ -81,25 +86,29 @@ def classification():
         'sadness': Emotion(),
         'shame': Emotion()
     }
-    for label, words in read_file('data/train.txt'):
+    for label, words in read_file('data/train.txt', True):
         emotions[label].appear()
         for word in words:
             emotions[label].add(word)
-    for dummy, words_list in read_file('data/test.txt'):
+    a, b = 0, 0
+    for label, words_list in read_file('data/test.txt'):
         max_p = 0
         for name, emotion in emotions.items():
             p = emotion.probability
             for word in words_list:
-                p *= emotion.get_word_probability(word, laplace_smoothing=False, alpha=0.001)
+                p *= emotion.get_word_probability(word, laplace_smoothing=True, alpha=0.001)
             if p > max_p:
                 max_p = p
                 max_p_emotion = name
-        print(max_p_emotion)
+        if max_p_emotion == label:
+            a += 1
+        else:
+            b += 1
+        print(a / (a + b))
         yield max_p_emotion
 
 
 if __name__ == '__main__':
-    classification()
     with open('084_3.txt', 'wt') as f:
         for emotion in classification():
             f.write(emotion + '\n')
