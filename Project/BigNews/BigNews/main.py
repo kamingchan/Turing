@@ -73,7 +73,6 @@ class Score(object):
 
 def read_file(data_file, train_rate):
     """
-
     :param data_file: json
     :param train_rate: 0-1, divide train list into train or test
     """
@@ -82,6 +81,8 @@ def read_file(data_file, train_rate):
     with open(data_file) as file:
         _data = json.load(file)
         for _sample in _data:
+            if random(1) < 0.8:
+                pass
             _s = Sample(_sample['line'], _sample['label'])
             if random(1) < train_rate:
                 _train_list.append(_s)
@@ -106,7 +107,7 @@ if __name__ == '__main__':
     last_f1 = 0
     best_f1 = 0
     best_w = None
-    while count < 30000000:
+    while count < 300:
         w -= eta * err(train_list, w)
         count += 1
         s = Score(w)
